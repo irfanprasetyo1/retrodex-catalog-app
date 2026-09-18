@@ -1,13 +1,48 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!--Meta Tags-->
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>retrodex-catalog-app</title>
+    <meta
+      name="description"
+      content="Explore the most comprehensive retro game catalog at RetroDex. Find information on classic consoles, lists of legendary games, developers, and full details right here."
+    />
+    <meta name="author" content="RetroDex" />
+    <title>RetroDex - Catalog of Retro Games & Classic Consoles</title>
+
+    <!--Open Graph-->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="RetroDex - Catalog of Retro Games & Classic Consoles"
+    />
+    <meta
+      property="og:description"
+      content="Explore the most comprehensive retro game catalog at RetroDex. Find information on classic consoles, lists of legendary games, developers, and full details right here."
+    />
+    <meta property="og:image" content="./images/logo.jpg" />
+    <meta property="og:site_name" content="RetroDex" />
+    <meta property="og:locale" content="id_ID" />
+
+    <!--Favicons-->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--CSS-->
+    <link rel="stylesheet" href="/src/styles/style.css" />
   </head>
   <body>
+    <div id="navbar"></div>
     <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/scripts/main.js"></script>
   </body>
 </html>
