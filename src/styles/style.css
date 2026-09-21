@@ -96,6 +96,18 @@ a {
   letter-spacing: 0.05em;
 }
 
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-nav-link {
+  font-size: var(--font-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
 /* === Page Wrapper === */
 .page {
   margin: 0 auto;
@@ -141,6 +153,8 @@ a {
   overflow: hidden;
   transition: border-color var(--transition-fast) transform
     var(--transition-fast);
+  display: block;
+  color: inherit;
 }
 
 @media (any-hover: hover) {
@@ -187,6 +201,80 @@ a {
   border-radius: var(--radius-sm);
 }
 
+/* === Link / Navigation Helpers === */
+.back-link {
+  display: inline-block;
+  margin-bottom: var(--space-md);
+  color: var(--color-text-muted);
+  font-size: var(--font-sm);
+}
+
+.back-link:hover {
+  color: var(--color-accent);
+}
+
+/* === Detail Page === */
+.detail-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  margin-bottom: var(--space-sm);
+}
+
+.detail-meta {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  font-size: var(--font-sm);
+  color: var(--color-text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.detail-row {
+  font-size: 0.9rem;
+  margin-bottom: 0.06rem;
+  color: var(--color-text-muted);
+}
+
+.detail-row strong {
+  color: var(--color-accent);
+}
+
+.detail-description {
+  margin-top: 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  white-space: pre-line;
+}
+
+/* === Consoles === */
+.console.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+}
+
+.console-card {
+  display: block;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: 1.25rem var(--space-sm);
+  text-decoration: none;
+  color: inherit;
+}
+
+.console-card-name {
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  color: var(--color-accent);
+}
+
+.console-card-count {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
 @media (min-width: 480px) {
   /* === Game Grid & Card === */
   .game-grid {
@@ -221,6 +309,12 @@ a {
   /* === Loading & Error State === */
   .status-message {
     padding: 3rem var(--space-sm);
+  }
+
+  /* === Consoles === */
+  .console-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-sm);
   }
 }
 
@@ -259,5 +353,10 @@ a {
   .game-grid {
     grid-template-columns: repeat(auto-fill, min-max(210px, 1fr));
     gap: 1.25rem;
+  }
+
+  /* === Console === */
+  .console-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }

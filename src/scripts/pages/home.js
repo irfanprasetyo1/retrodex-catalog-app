@@ -1,19 +1,5 @@
 import { getGameList } from "../data/api.js";
-
-//Fungsi untuk mengubah objek game menjadi string HTML
-function createGameCard(game) {
-  return `
-    <article class="game-card">
-      <div class="game-card-image">
-        <img src="${game.background_image}" alt="${game.name}" />
-      </div>
-      <div class="game-card-body">
-        <h3 class="game-card-title">${game.name}</h3>
-        <span class="game-card-rating">\u2605 ${game.rating}</span>
-      </div>
-    </article>
-  `;
-}
+import { createGameCard } from "../components/gameCard.js";
 
 //Fungsi untuk merender halaman home
 export async function renderHome(params, container) {

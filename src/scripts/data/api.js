@@ -1,5 +1,7 @@
 const API_KEY = import.meta.env.VITE_RAWG_API_KEY;
 const BASE_URL = "https://api.rawg.io/api";
+let cachedPlatforms = null;
+let cachedParentPlatforms = null;
 
 function buildQueryString(paramsObject) {
   const params = new URLSearchParams({ key: API_KEY, ...paramsObject });
@@ -29,6 +31,10 @@ export async function getGameDetail(idOrSlug) {
 }
 
 export async function getParentPlatforms() {
+  if (cachedParentPlatforms) {
+    return cachedParentPlatforms;
+  }
+
   const queryString = buildQueryString({});
   const response = await fetch(
     `${BASE_URL}/platforms/lists/parents?${queryString}`,
@@ -38,5 +44,28 @@ export async function getParentPlatforms() {
     throw new Error(`Gagal mengambil detail game (status: ${response.status})`);
   }
 
-  return response.json();
+  const data = await response.json();
+  cachedParentPlatforms = data;
+
+  return data;
+}
+
+export async function getPlatforms() {
+  if (cachedPlatforms) {
+    return cachedPlatforms;
+  }
+
+  const queryString = buildQueryString({ page_size: 50 });
+  const response = await fetch(`${BASE_URL}/platforms?${queryString}`);
+
+  if (!response.ok) {
+    throw new Error(
+      `Gagal mengambil daftar platform (status: ${response.status})`,
+    );
+  }
+
+  const data = await response.json();
+  cachedPlatforms = data;
+
+  return data;
 }
