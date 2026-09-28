@@ -1,6 +1,6 @@
 const routes = [];
 
-//Mengubah string URL path menjadi Regular Expression (RegExp)
+//Fungsi untuk mengubah pola path string menjadi Regular Expression (RegExp)
 export function registerRoute(path, renderFn) {
   const paramNames = [];
   const regexPattern = path
@@ -18,7 +18,7 @@ export function registerRoute(path, renderFn) {
   routes.push({ regex, paramNames, renderFn });
 }
 
-//Fungsi untuk mencari route yang cocok dengan hash saat ini
+//Fungsi untuk mencari routes yang cocok dengan URL hash saat ini
 function matchRoute(hashPath) {
   for (const route of routes) {
     const match = hashPath.match(route.regex);
@@ -35,17 +35,22 @@ function matchRoute(hashPath) {
 }
 
 let notFoundHandler = () => {
-  document.querySelector("#app").innerHTML = "<p>Halaman tidak ditemukan.</p>";
+  document.querySelector("#app").innerHTML =
+    `<p class="not-found">Page not found</p>`;
 };
 
+//Fungsi untuk menangani kustom jika URL hash tidak cocok dengan rute yang terdaftar
 export function setNotFoundHandler(fn) {
   notFoundHandler = fn;
 }
 
+//Fungsi untuk mengambil nilai hash URL saat ini
 async function handleRouteChange() {
   const container = document.querySelector("#app");
-  const hashPatch = window.location.hash.slice(1) || "/";
-  const matched = matchRoute(hashPatch);
+  const fullHash = window.location.hash.slice(1) || "/";
+  const [hashPath, queryString] = fullHash.split("?");
+  const searchParams = new URLSearchParams(queryString || "");
+  const matched = matchRoute(hashPath);
 
   if (!matched) {
     notFoundHandler();
@@ -55,18 +60,20 @@ async function handleRouteChange() {
   window.scrollTo(0, 0);
 
   try {
-    await matched.renderFn(matched.params, container);
+    await matched.renderFn(matched.params, container, searchParams);
   } catch (error) {
-    console.error("Gagal render halaman:", error);
-    container.innerHTML = `<p>Terjadi kesalahan saat memuat halaman.</p>`;
+    console.error("Failed to render page:", error);
+    container.innerHTML = `<p class="not-found">An error occurred while loading the page</p>`;
   }
 }
 
+//Fungsi untuk mengaktifkan router dengan mendaftarkan event listener
 export function startRouter() {
   window.addEventListener("hashchange", handleRouteChange);
   handleRouteChange();
 }
 
+//Fungsi untuk melakukan navigasi halaman secaa programatis dengan memperbarui nilai
 export function navigateTo(path) {
   window.location.hash = path;
 }

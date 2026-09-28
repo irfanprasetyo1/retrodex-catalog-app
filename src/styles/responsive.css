@@ -1,0 +1,121 @@
+@media (min-width: 480px) {
+  /* --- Game Grid --- */
+  .game-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: var(--space-md);
+  }
+}
+
+@media (min-width: 768px) {
+  /* --- Container --- */
+  .container {
+    padding-inline: var(--space-lg);
+  }
+
+  /* --- Header & Navigasi --- */
+  .brand-name {
+    font-size: var(--font-md);
+  }
+
+  /* --- Hero Section --- */
+  .hero-image {
+    min-height: 425px;
+  }
+
+  .section-card {
+    top: -125px;
+  }
+
+  /* --- Search Input & Filter Select --- */
+  .search-panel {
+    padding-inline: var(--space-md);
+  }
+
+  .clear-search {
+    right: var(--space-xl);
+  }
+
+  .filter-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+  }
+
+  /* --- Game Grid --- */
+  .game-grid {
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  }
+
+  /* --- Genre Grid --- */
+  .genre-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  /* --- Header & Navigasi --- */
+  .header-inner {
+    padding-block: var(--space-md);
+  }
+
+  .brand-name {
+    font-size: var(--font-lg);
+  }
+
+  .navbar-menu {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: var(--space-xs);
+    background-color: #fff;
+    border-radius: var(--radius-full);
+    transform: none;
+  }
+
+  .navbar-list {
+    flex-direction: row;
+    gap: var(--space-xs);
+    padding-inline: var(--space-md);
+  }
+
+  .navbar-link {
+    display: flex;
+    border: none;
+    padding: var(--space-2xs) var(--space-sm);
+    transition: background-color var(--transition-fast);
+  }
+
+  .navbar-link:hover {
+    background-color: rgba(225, 235, 255, 0.5);
+    border-radius: var(--radius-full);
+  }
+
+  .navbar-link.active {
+    background-color: var(--accent-primary);
+    color: #fff;
+    border-radius: var(--radius-full);
+  }
+
+  .hamburger,
+  .navbar-menu-header,
+  .nav-overlay {
+    display: none;
+  }
+
+  /* --- Search Input & Filter Select --- */
+  .filter-row {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-sm);
+  }
+
+  /* --- Game Grid --- */
+  .game-grid {
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  /* --- Genre Grid --- */
+  .genre-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-md);
+  }
+}

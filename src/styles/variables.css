@@ -1,0 +1,97 @@
+:root {
+  /* ===== LIGHT MODE (default) ===== */
+  /* --- Warna Latar & Text --- */
+  --bg-primary: #f0f4f9;
+  --bg-secondary: #e6ecf5;
+  --bg-tertiary: #ffffff;
+
+  --text-primary: #1a3d7c;
+  --text-secondary: #4a6fa5;
+  --text-muted: #8ba0c4;
+
+  --accent-primary: #1a56db;
+  --accent-primary-hover: #1543a8;
+  --accent-secondary: #ff6b35;
+
+  --border: #dbe3f0;
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+  --color-danger: #dc2626;
+
+  --color-card-bg: #ffffff;
+  --color-overlay: rgba(26, 61, 124, 0.4);
+
+  /* ===== Spacing & Radius ===== */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* ===== Tipografi ===== */
+  --font-display: "Press Start 2P", monospace;
+  --font-body: "JetBrains Mono", monospace;
+
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-base: 1rem;
+  --font-md: 1.15rem;
+  --font-lg: 1.6rem;
+  --font-xl: 2.2rem;
+  --font-2xl: 2.75rem;
+  --font-3xl: 3.4rem;
+
+  /* ===== Shadow ===== */
+  --shadow-sm: 0 1px 2px rgba(26, 61, 124, 0.06);
+  --shadow-md:
+    0 4px 6px rgba(26, 61, 124, 0.08), 0 2px 4px rgba(26, 61, 124, 0.06);
+  --shadow-lg:
+    0 10px 15px rgba(26, 61, 124, 0.1), 0 4px 6px rgba(26, 61, 124, 0.05);
+  --shadow-xl:
+    0 20px 25px rgba(26, 61, 124, 0.12), 0 8px 10px rgba(26, 61, 124, 0.06);
+  --shadow-glow: 0 0 12px rgba(26, 86, 219, 0.35);
+
+  /* ===== Transition ===== */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+  --transition-bounce: 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ===== DARK MODE ===== */
+body.dark {
+  --bg-primary: #0f1420;
+  --bg-secondary: #161d2e;
+  --bg-tertiary: #1c2438;
+
+  --text-primary: #e8edf7;
+  --text-secondary: #a3b3cc;
+  --text-muted: #64748b;
+
+  --accent-primary: #4d8cff;
+  --accent-primary-hover: #6ea1ff;
+  --accent-secondary: #ff8c5a;
+
+  --border: #2a3347;
+  --color-success: #22c55e;
+  --color-warning: #fbbf24;
+  --color-danger: #f87171;
+
+  --color-card-bg: #161d2e;
+  --color-overlay: rgba(0, 0, 0, 0.6);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5), 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.6), 0 8px 10px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 16px rgba(77, 140, 255, 0.45);
+}
