@@ -17,12 +17,14 @@ import { renderGameDetail } from "./pages/game-detail.js";
 import { renderGenre } from "./pages/genre.js";
 import { renderGenreResults } from "./pages/genreResult.js";
 import { renderWishlist, renderLibrary } from "./pages/collectionPage.js";
+import { renderFooter } from "./components/footer.js";
 import { renderNotFound } from "./pages/not-found.js";
 
 renderNavbar();
 initToggle();
 initMenu();
 initCollectionButtons();
+renderFooter();
 
 registerRoute("/", renderHome);
 registerRoute("/search", renderSearch);
