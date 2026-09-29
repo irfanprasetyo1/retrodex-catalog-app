@@ -17,6 +17,14 @@ body {
   transition:
     background-color var(--transition-base),
     color var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+html,
+body {
+  height: 100%;
 }
 
 img {
@@ -39,6 +47,14 @@ button {
   color: inherit;
   font-family: inherit;
   cursor: pointer;
+}
+
+#main-content {
+  flex: 1 0 auto;
+}
+
+#footer {
+  flex-shrink: 0;
 }
 
 /* --- Skip Link & Container --- */
